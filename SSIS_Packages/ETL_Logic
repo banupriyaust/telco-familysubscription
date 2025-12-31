@@ -1,0 +1,27 @@
+# SSIS Expression for FinalRevenue
+
+## ETL Pipeline Steps
+
+### 1. Source
+```sql
+SELECT * FROM Staging_Table
+```
+
+### 2. Script Component
+Calculate FamilyCount using:
+```sql
+COUNT() OVER(PARTITION BY FamilyID)
+```
+
+### 3. Derived Column - DiscountAmount
+```csharp
+(FamilyID > 0 && FamilyCount >= 3) ? (BaseRate * 0.2) : 0
+```
+
+### 4. Calculate Final Revenue
+```csharp
+FinalRevenue = BaseRate - DiscountAmount
+```
+
+### 5. Destination
+Map output to: `Telecom_DWH.FactSales`

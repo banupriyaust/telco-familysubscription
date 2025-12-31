@@ -1,16 +1,66 @@
-Telecom Family Plan Analysis: End-to-End BI Solution
------------------------------------------------------
-Project Overview:
-This project demonstrates a full-scale Business Intelligence solution for a Telecom provider aiming to launch a Discounted Family Data Plan. The goal is to identify eligible individual customers for "Upselling" to family plans and calculate the impact of discounts on total revenue.
+# 📱 Telecom Family Plan Analysis: End-to-End BI Solution
 
-Tech Stack:
-Database: SQL Server 2022
+![Status](https://img.shields.io/badge/Status-Active-brightgreen) ![Version](https://img.shields.io/badge/Version-1.0-blue) ![License](https://img.shields.io/badge/License-MIT-green)
 
-ETL: SSIS (SQL Server Integration Services) 2.1.2
+---
 
-Visualization: Power BI Desktop (January 2025 Version)
+## 📊 Project Overview
 
-Business Logic:
-Family Discount: 20% discount applied to families with 3 or more members.
+This project demonstrates a **full-scale Business Intelligence solution** for a Telecom provider aiming to launch a **Discounted Family Data Plan**. The solution enables data-driven decision-making through:
 
-Goal: Reduce churn by increasing account "stickiness" through multi-line plans.
+- 🎯 Identification of eligible individual customers for family plan upselling
+- 💰 Revenue impact analysis of discount strategies
+- 📈 Customer churn reduction through multi-line plan adoption
+
+---
+
+## 🛠️ Tech Stack
+
+| Component | Technology | Version |
+|-----------|-----------|---------|
+| **Database** | SQL Server | 2022 |
+| **ETL** | SSIS (SQL Server Integration Services) | 2.1.2 |
+| **Visualization** | Power BI Desktop | January 2025 |
+
+---
+
+## 💼 Business Logic
+
+### Family Discount Program
+```
+📌 Discount Rate: 20% off for families with 3+ members
+🎁 Program Goal: Increase account "stickiness" through multi-line plans
+💡 Key Benefit: Reduce customer churn by bundling services
+```
+
+### Key Objectives
+- ✅ Identify upsell opportunities among individual subscribers
+- ✅ Calculate revenue impact of 20% family discounts
+- ✅ Project churn reduction through multi-line adoption
+- ✅ Enable data-driven pricing strategies
+
+---
+
+## 🚀 Getting Started
+
+> **Prerequisites**: SQL Server 2022, SSIS 2.1.2, Power BI Desktop (Jan 2025)
+
+### Quick Links
+- [Database Setup](#database-setup)
+- [ETL Pipeline](#etl-pipeline)
+- [Reports & Dashboards](#reports--dashboards)
+
+---
+
+## 📋 Features
+
+- 🔄 Automated ETL pipeline for data transformation
+- 📊 Interactive Power BI dashboards
+- 💹 Revenue impact analysis
+- 🎯 Customer segmentation for targeted campaigns
+
+---
+
+## 📞 Support
+
+For questions or contributions, please reach out through GitHub Issues.

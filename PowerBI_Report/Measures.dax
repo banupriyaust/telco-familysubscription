@@ -1,0 +1,49 @@
+// ========================================================
+// POWER BI DAX MEASURES - TELECOM FAMILY PLAN ANALYSIS
+// ========================================================
+
+// ========================================================
+// REVENUE MEASURES
+// ========================================================
+
+-- Total Revenue after all discounts applied
+Total Net Revenue =
+    SUMX(
+        FactSales,
+        FactSales[FinalRevenue]
+    )
+
+
+-- Total Savings offered to family plan customers
+Customer Savings =
+    SUMX(
+        FactSales,
+        FactSales[DiscountApplied]
+    )
+
+
+-- Revenue discount percentage
+Discount Percentage =
+    DIVIDE(
+        [Customer Savings],
+        SUM(FactSales[BaseRate]),
+        0
+    )
+
+
+// ========================================================
+// RISK & CHURN MEASURES
+// ========================================================
+
+-- Churn Risk Index by Plan Type
+-- Individual plans have higher churn risk than family plans
+Churn Risk Index =
+VAR AvgChurn = 0.15                    -- Baseline churn rate: 15%
+VAR IndividualPenalty = 0.10           -- Additional risk for individual plans
+VAR FamilyBenefit = 0.05               -- Reduced risk for family plans
+RETURN
+    IF(
+        SELECTEDVALUE(DimCustomer[PlanType]) = "Individual",
+        AvgChurn + IndividualPenalty,
+        AvgChurn - FamilyBenefit
+    )
